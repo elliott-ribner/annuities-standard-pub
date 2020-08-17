@@ -1,0 +1,130 @@
+<div class="hero-background">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="large-7 small-12 cell">
+                <div class="hero-section-text">
+                    <h1 class="text-center">Taking Annuity Shopping to the 21st Century</h1>
+                    <hr>
+                    <h5>We strive to bring you the most accurate and competitive annuity quotes.
+                        Unlike other online annuity businesses we do not require a phone number or email. Simply follow
+                        these steps:
+                    </h5>
+                    <ol class="larger-ol">
+                        <li>Fill out your annuity preferences</li>
+                        <li>Compare personalized annuity quotes</li>
+                        <li>Choose the best annuity for you</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="large-5 small-12 cell">
+                <div class="translucent-form-overlay">
+
+                    <form id="quote-request-form">
+                        <h3>Get Immediate Annuity Quotes</h3>
+                        <div class="row columns">
+                            <label>Investment Amount
+                                <input type="text" name="principle" value="100000">
+                            </label>
+                        </div>
+                        <div class="grid-x grid-margin-x">
+
+                            <div class="small-6 cell">
+                                <label>Income Will Begin:
+                                    <select name="start-date" type="text">
+                                        {{#each incomeStarts}}
+                                        <option value="{{timeInt}}">{{timeString}}</option>
+                                        {{/each}}
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="small-6 cell">
+                                <label>Current Age
+                                    <select name="age" type="text">
+                                        <option value="empty">Select Age</option>
+                                        {{#each ages}}
+                                        <option value="{{age}}" {{#ifEquals age 70}}selected="selected" {{/ifEquals}}>
+                                            {{age}}</option>
+                                        {{/each}}
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="grid-x grid-margin-x">
+
+                            <div class="small-6 cell">
+                                <label>Gender
+                                    <select name="gender" type="text">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="small-6 cell">
+                                <label>State
+                                    <select name="state" type="text">
+                                        {{#each states}}
+                                        <option value="{{abbr}}">{{abbr}}</option>
+                                        {{/each}}
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!--<div class="grid-x grid-margin-x">-->
+                        <!--<div class="small-6 cell">-->
+                        <!--<label>Funding Source-->
+                        <!--<select name="source" type="text">-->
+                        <!--{{#each fundingSources}}-->
+                        <!--<option value="{{this}}">{{this}}</option>-->
+                        <!--{{/each}}-->
+                        <!--</select>-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <!--<div class="small-6 cell">-->
+                        <!--<label>Cost of Living Adjustment-->
+                        <!--<select name="cola" type="text">-->
+                        <!--{{#each livingAdjustments}}-->
+                        <!--<option value="{{this}}">{{this}}</option>-->
+                        <!--{{/each}}-->
+                        <!--</select>-->
+                        <!--</label>-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+                        <div class="row">
+                            <label class="columns small-12">Joint Life 2 Person Annuity</label>
+                            <div class="columns small-6">
+                                <input id="jointLifeCheckBox" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="grid-x grid-margin-x">
+                            <div id="secondPersonAge" class=" secondPerson small-6 cell">
+                                <label>Second Age
+                                    <select name="second-age" type="text">
+                                        <option value="empty">Select Age</option>
+                                        {{#each ages}}
+                                        <option value="{{age}}">{{age}}</option>
+                                        {{/each}}
+                                    </select>
+                                </label>
+                            </div>
+                            <div id="secondPersonGender" class="secondPerson small-6 cell">
+                                <label>Second Gender
+                                    <select name="second-gender" type="text">
+                                        <option value="empty">Select Gender</option>
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <button id='submit-quote-request' type="button" class="primary button expanded submit-button">
+                            Get Quotes
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

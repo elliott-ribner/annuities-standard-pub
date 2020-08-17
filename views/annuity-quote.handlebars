@@ -1,0 +1,53 @@
+<div class="general-container">
+  <div class="modal-wrapper">
+    <div class="modal">
+      <div class="head">
+        <a class="btn-close trigger" href="javascript:;"></a>
+      </div>
+      <div class="content">
+        <img src="/images/text-only-copy.png">
+        <hr />
+        To lock down these rates give our team of annuity professionals a call at: <span
+          class="phone-call-to-action">(617) 622-5635</span>.
+
+        <hr /> Provide this code to reference your quote: <span class="ref-code">{{shortCode}}
+      </div>
+    </div>
+  </div>
+  <div class="param-container">
+    <h4 class="text-center"> Congrats, we have put together some quotes below based on the information you provided!
+    </h4>
+    <hr>
+    <ul class="larger-ul">
+      <li>Age: {{age}}</li>
+      <li>Gender: {{gender}}</li>
+      <li>Principle: ${{principle}}</li>
+      <li>Start Date: {{startDate}}</li>
+      {{#if secondGender}}
+      <li>Second Gender: {{secondGender}}</li>
+      {{/if}}
+      {{#if secondAge}}
+      <li>Second Age: {{secondAge}}</li>
+      {{/if}}
+    </ul>
+  </div>
+  {{#each chunks}}
+  <div class="grid-x grid-margin-x padding-top">
+    {{#each this}}
+    <ul class="pricing-table no-bullet text-center large-3 cell">
+      <li class="title">
+        <h4>{{name}}</h4>
+      </li>
+      <li class="price">${{monthlyPayment}} / month</li>
+      <li class="description">
+        <h5>{{description}}</h5>
+      </li>
+      <li>
+        <button type="button" class="button buy-button" data-open="{{_id}}">Invest Now</button>
+      </li>
+    </ul>
+    {{/each}}
+  </div>
+  {{/each}}
+
+</div>
